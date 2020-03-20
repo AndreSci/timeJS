@@ -1,0 +1,32 @@
+/**
+ * @param {Number} hours
+ * @param {Number} minutes
+ * @param {Number} interval
+ * @returns {String}
+ */
+module.exports = function (hours, minutes, interval) {
+
+var indexHours = Math.floor(((hours*60)+ minutes + interval) / 60 % 24);
+var indexMin = Math.floor((minutes + interval) % 60);
+
+var resHours;
+var resMin;
+if(indexHours < 10)
+{
+    resHours = '0' + indexHours;
+}
+else
+{
+    resHours = indexHours;
+}
+if(indexMin < 10)
+{
+    resMin = '0' + indexMin;
+}
+else
+{
+    resMin = indexMin;
+}
+
+return resHours + ":" + resMin;
+};
